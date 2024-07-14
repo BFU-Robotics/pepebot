@@ -11,11 +11,10 @@ WORKDIR /app
 COPY pyproject.toml poetry.lock ./
 
 # Install dependencies
-RUN poetry config virtualenvs.create false \
-    && poetry install --no-dev --no-interaction --no-ansi
+RUN poetry install
 
 # Copy the rest of the application code into the container
 COPY . .
 
 # Command to run the bot
-CMD ["poetry", "run", "python", "bot.py"]
+CMD ["poetry", "run", "python", "app/bot.py"]

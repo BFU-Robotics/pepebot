@@ -2,13 +2,13 @@ version: '3.8'
 
 services:
   telegram_bot:
-    build: ./app
+    build: .
     container_name: telegram_bot
     restart: always
     environment:
       - TELEGRAM_TOKEN=${TELEGRAM_TOKEN}
       - CHAT_ID=${CHAT_ID}
-      - PLANKA_BASE_URL=${PLANKA_BASE_URL}
+      - PLANKA_API_URL=${PLANKA_API_URL}
       - GITHUB_API_URL=${GITHUB_API_URL}
       - GITHUB_TOKEN=${GITHUB_TOKEN}
       - WIKI_API_URL=${WIKI_API_URL}
